@@ -93,11 +93,7 @@ Os dados tratados foram exportados para CSV e estão prontos para uso em Power B
 
    scripts/
    
-├── etl_limpeza.ipynb
-
-├── analise_roteiro.ipynb
-
-├── exportacao_dados.ipynb
+├── ProjetoSazionalidadeTendencias
 
    docs/
    
