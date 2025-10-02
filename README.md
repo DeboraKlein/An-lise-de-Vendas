@@ -93,7 +93,7 @@ Os dados tratados foram exportados para CSV e estão prontos para uso em Power B
 
    scripts/
    
-├── ProjetoSazionalidadeTendencias
+├── ProjetoSazionalidadeTendencias.ipynb
 
    docs/
    
