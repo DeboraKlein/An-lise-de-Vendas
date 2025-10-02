@@ -76,7 +76,9 @@ A meta de +15% é viável com foco em produtos de alta intenção e faixas com b
 
 ##  6. Implantação
 Os dados tratados foram exportados para CSV e estão prontos para uso em Power BI. A estrutura do repositório é:
+
    dados_tratados/
+   
 ├── evolucao_negocio.csv
 
 ├── faixa_preco.csv
@@ -90,10 +92,15 @@ Os dados tratados foram exportados para CSV e estão prontos para uso em Power B
 ├── simulacao_meta_15.csv
 
    scripts/
+   
 ├── etl_limpeza.ipynb
+
 ├── analise_roteiro.ipynb
+
 ├── exportacao_dados.ipynb
 
    docs/
+   
 ├── apresentacao.pptx
+
 ├── glossario.csv
