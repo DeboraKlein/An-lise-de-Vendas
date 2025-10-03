@@ -76,7 +76,7 @@ print(f"Colunas disponíveis: {evolucao.columns.tolist()}")
 ### 3. Data Preparation
 #### Limpeza e Transformação
 python
-Correção de valores problemáticos
+- Correção de valores problemáticos
 ````
 evolucao_limpa.loc[evolucao_limpa['Mês'] == 'Agosto', 'visitas'] = 2570
 evolucao_limpa.loc[evolucao_limpa['Mês'] == 'Outubro', 'visitas'] = 210
