@@ -224,14 +224,19 @@ Acompanhar performance vs Julho/Setembro 2024
 text
 projeto_essencia_vital/
 ├── dados/
-│   ├── Relatorio_evolucao_negocio_2025_01_01-2025_10_01.csv
-│   ├── dados_evolucao_processados.csv
-│   ├── dados_evolucao_FINAL.csv
-│   └── dados_9_meses_CORRIGIDOS.csv
+
+    ├── Relatorio_evolucao_negocio_2025_01_01-2025_10_01.csv
+    ├── dados_evolucao_processados.csv
+    ├── dados_evolucao_FINAL.csv
+    └── dados_9_meses_CORRIGIDOS.csv
+    
 ├── notebooks/
-│   └── analise_sazonalidade_preditiva.ipynb
+
+    └── analise_sazonalidade_preditiva.ipynb
+    
 ├── relatorios/
-│   └── README.md
+    └── README.md
+    
 └── requirements.txt
 
 ## Tecnologias Utilizadas
