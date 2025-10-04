@@ -224,22 +224,22 @@ Acompanhar performance vs Julho/Setembro 2024
 
 projeto_essencia_vital/
 
-  ├── dados/
+    ├── dados/
 
     ├── Relatorio_evolucao_negocio_2025_01_01-2025_10_01.csv
     ├── dados_evolucao_processados.csv
     ├── dados_evolucao_FINAL.csv
     └── dados_9_meses_CORRIGIDOS.csv
     
-  ├── notebooks/
+    ├── notebooks/
 
     └── analise_sazonalidade_preditiva.ipynb
     
-  ├── relatorios/
+    ├── relatorios/
   
     └── README.md
     
-  └── requirements.txt
+    └── requirements.txt
 
 ## Tecnologias Utilizadas
 - Python 3.x
