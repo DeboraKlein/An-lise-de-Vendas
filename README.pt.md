@@ -118,14 +118,14 @@ Teste: 2 meses (Agosto-Setembro)
 #### Análise de Sazonalidade - Resultados Chave
 
 ##### Variação Mensal das Vendas:
-• Fevereiro: -92.7% (queda extrema - outlier)
-• Março: +1026.6% (recuperação dramática)
-• Abril: -60.4%
-• Maio: +39.2%
-• Junho: +24.5%
-• Julho: +136.7% (pico do pré-verão)
-• Agosto: -40.0%
-• Setembro: +66.4% (início do verão)
+- Fevereiro: -92.7% (queda extrema - outlier)
+- Março: +1026.6% (recuperação dramática)
+- Abril: -60.4%
+- Maio: +39.2%
+- Junho: +24.5%
+- Julho: +136.7% (pico do pré-verão)
+- Agosto: -40.0%
+- Setembro: +66.4% (início do verão)
 
 ##### Padrões Sazonais Identificados:
 
