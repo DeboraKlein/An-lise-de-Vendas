@@ -1,259 +1,163 @@
-# Análise Preditiva e de Sazonalidade - Essência Vital Suplementos
+README — Análise de Sazonalidade e Modelagem Preditiva
+Projeto de Inteligência Analítica | Estrutura CRISP-DM
 
-## Visão Geral do Projeto
-Este projeto realiza análise de sazonalidade e preditiva para a Essência Vital Suplementos, empresa do segmento de suplementos alimentares voltada para o público que busca boa forma física e saúde. Utilizando dados do Mercado Livre de 9 meses (Janeiro a Setembro), desenvolvemos insights estratégicos para otimizar vendas, especialmente durante o período do Projeto Verão.
+1. 🧭 Business Understanding
+Contexto do Negócio: Este projeto analisa dados reais de um e-commerce de suplementos nutricionais voltado ao consumidor final (B2C), com foco em saúde e bem-estar. O objetivo é entender o comportamento de vendas ao longo de 12 meses e propor soluções analíticas para apoiar decisões comerciais.
 
-## Objetivos do Projeto
+Objetivo Geral: Realizar uma análise exploratória e preditiva sobre o desempenho comercial, com foco em sazonalidade, eficiência operacional e variáveis que influenciam diretamente o faturamento.
 
-### Objetivo Principal
-Identificar padrões sazonais e desenvolver modelo preditivo para otimizar estratégias de vendas durante o período do Projeto Verão.
+Objetivos Específicos:
 
-### Objetivos Específicos
-- Analisar sazonalidade das vendas ao longo de 9 meses
-- Desenvolver modelo preditivo para vendas futuras
-- Identificar oportunidades específicas para suplementos alimentares
-- Fornecer insights para campanhas do Projeto Verão
+Identificar padrões sazonais e variações mensais
 
-## Dados Analisados
+Avaliar métricas operacionais como conversão, ticket médio e receita por visita
 
-### Fonte dos Dados
-- Fonte: Mercado Livre
-- Período: Janeiro a Setembro (9 meses completos)
-- Total de registros: 10 → 9 meses (após limpeza)
-- Colunas analisadas: 17 métricas de desempenho
+Testar abordagens preditivas para projeção de vendas
 
-### Métricas Principais
-- Visitas: 2.100 a 6.669 visitas/mês
-- Vendas brutas: R$ 248 a R$ 4.539/mês
-- Compradores únicos: 127
-- Quantidade de vendas: 131
+Gerar recomendações estratégicas com base em evidências analíticas
 
-##  Metodologia CRISP-DM
+Diagnosticar variáveis com maior impacto no desempenho comercial
 
-### 1. Business Understanding
+2. 📊 Data Understanding
+Fonte dos Dados: Plataforma Mercado Livre Período Analisado: Outubro/2024 a Setembro/2025 Registros: 12 meses completos (Outubro/2025 excluído por inconsistência) Principais Métricas:
 
-#### Contexto do Negócio
-- Empresa: Essência Vital Suplementos
-- Segmento: Suplementos alimentares
-- Público-alvo: Pessoas que buscam boa forma física e saúde
-- Período Crítico: Projeto Verão (Setembro a Dezembro)
+Visitas
 
-#### Objetivos de Negócio
-- Otimizar campanhas do Projeto Verão
-- Antecipar demanda sazonal
-- Melhorar gestão de estoque
-- Aumentar eficiência de marketing
+Compradores únicos
 
-### 2. Data Understanding
+Conversão (%)
 
-#### Dados Iniciais
-- Dataset original: 10 meses, 17 colunas
+Quantidade de vendas
 
-#### Problemas identificados:
-  - Mês de Outubro com dados inconsistentes (210 visitas vs média de 2.500+)
-  - Valores de Fevereiro anomalamente baixos (R$ 248)
-  - Problema de encoding com acentos ("março" vs "marco")
+Unidades vendidas
 
-#### Estatísticas Descritivas Iniciais
+Vendas brutas
 
-- Vendas totais: R$ 22.820,00
-- Média mensal: R$ 2.535,56
-- Maior venda: R$ 4.539,00 (Julho)
-- Menor venda: R$ 248,00 (Fevereiro)
-    
-### 3. Data Preparation
+Ticket médio
 
-#### Processos de Limpeza Realizados
-- Exclusão de Outubro: Dados inconsistentes (mês incompleto)
-- Correção de Março: Problema de acentuação resolvido
-- Tratamento de Valores: Correção de valores multiplicados por 10
-- Padronização: Meses em minúsculo, sem acentos
+Preço médio por unidade
 
-#### Dataset Final
-- Período: 9 meses (Janeiro a Setembro)
-- Meses válidos: janeiro, fevereiro, marco, abril, maio, junho, julho, agosto, setembro
-- Dados limpos: Prontos para análise
+Totais Validados:
 
-### 4. Modeling
-#### Configuração do Modelo Preditivo
-````
-# Features selecionadas
-features = ['mes_num', 'visitas', 'compradores_unicos', 'quantidade_vendas']
-target = 'vendas_brutas'
+Faturamento total: R$ 32.835
 
-# Modelo escolhido
-RandomForestRegressor(n_estimators=100, random_state=42, max_depth=4)
+Visitas: 44.006
 
-# Validação temporal
-Treino: 7 meses (Janeiro-Julho)
-Teste: 2 meses (Agosto-Setembro)
-````
-#### Importância das Variáveis
-- Visitas: 30.0%
-- Número do Mês: 28.0%
-- Quantidade de Vendas: 21.6%
-- Compradores Únicos: 20.4%
+Compradores únicos: 169
 
-### 5. Evaluation
+Taxa de conversão: 0,38%
 
-#### Desempenho do Modelo - Resultados Reais
-- MAE (Mean Absolute Error): R$ 1.530,55
-- MAPE (Mean Absolute Percentage Error): 38.1%
-- R²: -2.96
+Ticket médio: R$ 183
 
-#### Análise Crítica do Modelo
+3. 🧹 Data Preparation
+ETL inicial realizado via Power Query para limpeza estrutural
 
-##### Problemas Identificados:
-- R² negativo (-2.96): Modelo performa pior que a média simples
-- MAPE 38.1%: Erro muito alto para decisões de negócio
-- Previsões infladas: Mês 12 projetado em R$ 52.687 (irreal)
-- Dados insuficientes: 9 meses é pouco para modelo complexo
+Conversão de dados no Python (tratamento de separadores decimais e tipos numéricos)
 
-#### Comparativo Previsões vs Realidade:
-- Agosto: Real R$ 2.724 | Previsto R$ 2.138 | Erro R$ -586
-- Setembro: Real R$ 4.532 | Previsto R$ 2.057 | Erro R$ -2.475
+Criação de variáveis auxiliares: número do mês, médias móveis, variação percentual
 
-### 6. Deployment
+Ordenação cronológica e validação cruzada com os dados originais
 
-#### Análise de Sazonalidade - Resultados Chave
+4. 🧠 Modeling
+Modelo 1 — Machine Learning (Random Forest Regressor)
+Configuração:
 
-##### Variação Mensal das Vendas:
-- Fevereiro: -92.7% (queda extrema - outlier)
-- Março: +1026.6% (recuperação dramática)
-- Abril: -60.4%
-- Maio: +39.2%
-- Junho: +24.5%
-- Julho: +136.7% (pico do pré-verão)
-- Agosto: -40.0%
-- Setembro: +66.4% (início do verão)
+Treinamento: 9 meses
 
-##### Padrões Sazonais Identificados:
+Teste: 3 meses
 
-- Pico Principal: Julho (R$ 4.539) - Pré-verão
-- Segundo Pico: Setembro (R$ 4.532) - Início do verão
-- Vale Crítico: Fevereiro (R$ 248) - Pós-festas
-- Forte Sazonalidade: 2º semestre com performance superior
+Variáveis utilizadas: visitas, compradores, conversão, ticket médio, entre outras
 
-### Análise Específica - Projeto Verão:
-#### Performance Verão vs Pré-Verão:
-• Julho (pré-verão): R$ 4.539
-• Setembro (verão): R$ 4.532  
-• Crescimento Julho→Setembro: -0.2% (estabilidade)
+Resultados:
 
-### Estratégias Recomendadas para Suplementos
+MAE: R$ 1.803,76
 
-#### Produtos-Chave para Verão:
-- Termogênicos: Aumentam metabolismo para queima de gordura
-- Whey Protein: Manutenção muscular durante cortes
-- BCAA: Preservação muscular em dietas
+MAPE: 42,2%
 
-#### Cronograma de Campanhas - Projeto Verão 2024/2025:
-##### Junho: "Desafio 90 dias para o Verão"
-- Foco: Termogênicos e queimadores
-- Meta: Alcançar patamar de R$ 4.500+
+R²: -2,46
 
-##### Julho: "Metade do Caminho - Resultados Parciais"
-- Foco: Manutenção do pico de vendas
-- Aproveitar momentum natural do mês
+Previsões até 50% abaixo do valor real
 
-##### Agosto: "Última Chance - 30 dias para a Praia"
-- Foco: Produtos de definição muscular
-- Estratégia: Urgência e resultados rápidos
+Diagnóstico: O modelo não é recomendado para uso imediato devido à baixa performance e à limitação de dados. A sazonalidade extrema e o volume reduzido (12 pontos temporais) dificultam a generalização.
 
-##### Setembro: "Verão Garantido - Manutenção"
-- Foco: Fidelização e manutenção de resultados
-- Produtos: BCAA e vitaminas
+Variáveis mais relevantes identificadas:
 
-### Insights de Negócio Críticos
+Compradores únicos
 
-#### Oportunidades Identificadas:
-- Julho é o melhor mês: R$ 4.539 (investir em pré-verão)
-- Agosto tem queda: R$ 2.724 (oportunidade de campanhas)
-- Setembro mantém alto: R$ 4.532 (bom sinal para verão)
+Quantidade de vendas
 
-### Expectativas Realistas - Projeto Verão 2024:
-#### Base: Performance de Julho e Setembro 2024
-##### Expectativa: R$ 4.535 ±20% (mantendo patamar similar)
+Visitas
 
-## Ações Imediatas Recomendadas:
+Valor médio por venda
 
-### Gestão de Estoque:
-- Aumentar 50% em Maio para Junho-Agosto
-- Foco em termogênicos e queimadores
+5. 🧮 Modeling Alternativo
+Modelo 2 — Médias Móveis + Fatores Sazonais
+Abordagem:
 
-### Campanhas de Marketing:
-- Antecipar para Junho (atualmente em R$ 1.918)
-- Criar "Desafio Verão" com metas progressivas
+Cálculo de médias móveis de 3 e 6 meses
 
-### Monitoramento:
-Acompanhar performance vs Julho/Setembro 2024
+Identificação de fatores sazonais por mês
 
-## Conclusões e Recomendações Finais
-### Resumo Executivo
-#### Pontos Fortes:
-- Sazonalidade clara identificada (pico Julho-Setembro)
-- Dados de Setembro indicam boa performance no verão
-- Opportunity de crescimento em Agosto
+Ajuste de previsões com base em tendência e sazonalidade
 
-#### Limitações:
-- Modelo preditivo não confiável (R² negativo)
-- Dados voláteis com outliers extremos
-- Período curto para análise (9 meses)
+Sistema de Alertas:
 
-#### Recomendações Prioritárias:
+🔴 Vendas abaixo da média (>20%)
 
-- Foco em Análise Sazonal: Mais valiosa que previsões numéricas
-- Meta Realista: Manter patamar de R$ 4.500+ no verão
-- Antecipação: Começar campanhas em Junho, não Setembro
-- Monitoramento Contínuo: Coletar mais dados para modelos futuros
+🟢 Vendas acima da média (>20%)
 
-### Próximos Passos
-#### Curto Prazo (1-2 meses):
-- Implementar campanhas de Junho
-- Ajustar estoque para pré-verão
-  
-#### Médio Prazo (3-6 meses):
-- Coletar mais dados para melhorar modelos
-- Desenvolver análise de cohort de clientes
-  
-#### Longo Prazo (12 meses):
-- Modelo preditivo robusto com dados anuais
-- Análise de múltiplas sazonalidades
+🟡 Vendas dentro da expectativa
 
-### Estrutura de Arquivos
+Previsões para Outubro-Dezembro:
 
-projeto_essencia_vital/
+Outubro: R$ 3.800
 
-    ├── dados/
+Novembro: R$ 3.200
 
-    ├── Relatorio_evolucao_negocio_2025_01_01-2025_10_01.csv
-    ├── dados_evolucao_processados.csv
-    ├── dados_evolucao_FINAL.csv
-    └── dados_9_meses_CORRIGIDOS.csv
-    
-    ├── notebooks/
+Dezembro: R$ 4.500
 
-    └── analise_sazonalidade_preditiva.ipynb
-    
-    ├── relatorios/
-  
-    └── README.md
-    
-    └── requirements.txt
+6. 🧪 Evaluation
+Comparativo entre abordagens:
 
-## Tecnologias Utilizadas
-- Python 3.x
-- Pandas - Manipulação de dados
-- Scikit-learn - Modelagem preditiva
-- Matplotlib/Seaborn - Visualizações
-- Jupyter Notebook - Análise exploratória
+Modelo	MAE	MAPE	R²	Recomendação
+Machine Learning (RF)	R$ 1.803	42,2%	-2,46	❌ Não recomendado
+Médias Móveis + Sazonalidade	—	—	—	✅ Recomendado
+7. 🚀 Deployment
+Plano de Ação Operacional:
 
-## Responsáveis
-Analista de Dados - Debora Rebula Klein
-Domínio do Negócio - Equipe Essência Vital Suplementos
+Reforçar estoque nos meses de alta sazonalidade
 
-📞 Contato
-Para mais informações sobre esta análise, entre em contato com a equipe de dados da Essência Vital Suplementos.
+Criar campanhas de reativação nos meses críticos
 
-Data da última atualização: 03/10/2025
+Monitorar mensalmente com alertas automáticos
+
+Revisar trimestralmente com novos dados
+
+Metas Realistas para 2025:
+
+Faturamento anual: R$ 40.000 – R$ 45.000
+
+Ticket médio: R$ 220
+
+Conversão: 0,75%
+
+8. 📌 Next Steps
+Implementar modelo prático no planejamento comercial
+
+Criar dashboard com métricas-chave
+
+Coletar dados mensalmente para robustez preditiva
+
+Reavaliar modelo de ML com 24+ meses de dados
+
+Desenvolver sistema de recomendações com base em comportamento de compra
+
+✅ Conclusão
+A análise revelou que o negócio apresenta forte potencial de crescimento, com um faturamento anual de R$ 32.835 e uma evolução de +194,4% ao longo de 12 meses. No entanto, esse crescimento é acompanhado por uma sazonalidade acentuada, com variações mensais superiores a 300%, o que exige planejamento operacional mais preciso.
+
+Os meses de maior desempenho (Setembro, Julho e Dezembro) concentram picos de vendas que devem ser antecipados com reforço de estoque, campanhas promocionais e equipe preparada. Por outro lado, meses críticos como Abril e Fevereiro demandam estratégias de retenção, reativação de clientes e foco em ticket médio para mitigar quedas.
+
+A tentativa de aplicar Machine Learning mostrou que, com apenas 12 pontos temporais, o modelo não é confiável para projeções. Em contrapartida, o uso de médias móveis e fatores sazonais se mostrou mais eficaz para gerar previsões realistas e orientar metas trimestrais.
+
+O negócio deve priorizar o aumento da base de compradores únicos, otimizar a taxa de conversão e elevar o ticket médio — variáveis que demonstraram maior impacto no faturamento. Com a implementação de um sistema de monitoramento contínuo e coleta de dados estruturada, será possível evoluir para modelos preditivos mais robustos e estratégias de recomendação personalizadas.
  
