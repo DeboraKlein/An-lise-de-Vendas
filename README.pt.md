@@ -135,7 +135,7 @@ pip install -r requirements.txt
 
 ##### Execute o notebook principal:
 
-notebooks/analise_sazonalidade_modelo.ipynb
+notebooks/Analise-de-Sazonalidade-e-Modelagem-Preditiva.ipynb
 
 ##### Para rodar o modelo prático:
 
