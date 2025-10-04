@@ -1,6 +1,7 @@
 # Projeto de Inteligência Analítica 
 
 ## 1. Business Understanding
+
 #### Contexto do Negócio: Este projeto analisa dados reais de um e-commerce de suplementos nutricionais voltado ao consumidor final (B2C), com foco em saúde e bem-estar. O objetivo é entender o comportamento de vendas ao longo de 12 meses e propor soluções analíticas para apoiar decisões comerciais.
 
 #### Objetivo Geral: Realizar uma análise exploratória e preditiva sobre o desempenho comercial, com foco em sazonalidade, eficiência operacional e variáveis que influenciam diretamente o faturamento.
@@ -13,6 +14,7 @@
 - Diagnosticar variáveis com maior impacto no desempenho comercial
 
 ## 2. Data Understanding
+
 #### Fonte dos Dados: Plataforma Mercado Livre Período Analisado: Outubro/2024 a Setembro/2025 
 #### Registros: 12 meses completos (Outubro/2025 excluído por inconsistência) 
 #### Principais Métricas:
@@ -26,12 +28,14 @@
 = Preço médio por unidade
 
 ## 3. Data Preparation
+
 - ETL inicial realizado via Power Query para limpeza estrutural
 - Conversão de dados no Python (tratamento de separadores decimais e tipos numéricos)
 - Criação de variáveis auxiliares: número do mês, médias móveis, variação percentual
 - Ordenação cronológica e validação cruzada com os dados originais
 
 ## 4. Modeling
+
 #### Modelo 1 — Machine Learning (Random Forest Regressor)
 ##### Configuração:
  - Treinamento: 9 meses
@@ -55,6 +59,7 @@
  - Valor médio por venda
 
 ## 5. Modeling Alternativo
+
 #### Modelo 2 — Médias Móveis + Fatores Sazonais
 ##### Abordagem:
  - Cálculo de médias móveis de 3 e 6 meses
@@ -74,6 +79,7 @@
  - Dezembro: R$ 4.500
 
 ## 6. Evaluation
+
 ##### Comparativo entre abordagens:
 
 ----------------------------------------------------------------------------------------
@@ -85,6 +91,7 @@
 ----------------------------------------------------------------------------------------
 
 ## 7. Deployment
+
 ##### Plano de Ação Operacional:
 - Reforçar estoque nos meses de alta sazonalidade
 - Criar campanhas de reativação nos meses críticos
@@ -97,6 +104,7 @@
 - Conversão: 0,75%
 
 ## 8. Next Steps
+
 - Implementar modelo prático no planejamento comercial
 - Criar dashboard com métricas-chave
 - Coletar dados mensalmente para robustez preditiva
@@ -104,13 +112,40 @@
 - Desenvolver sistema de recomendações com base em comportamento de compra
 
 
-## Tecnologias Utilizadas
+## 9. Tecnologias Utilizadas
 
 - **Power Query**: Pré-processamento e limpeza inicial dos dados
 - **Python (pandas, numpy)**: Manipulação de dados e análise estatística
 - **Matplotlib / Seaborn**: Visualização de dados
 - **Scikit-learn**: Modelagem preditiva com Random Forest
 - **Jupyter Notebook**: Ambiente de desenvolvimento e documentação
+
+
+## 10. Como Executar o Projeto
+##### Clone o repositório:
+
+````
+git clone [https://github.com/DeboraKlein/Analise-de-Sazonalidade-e-Modelagem-Preditiva.git]
+````
+
+##### Instale as dependências:
+````
+pip install -r requirements.txt
+````
+
+##### Execute o notebook principal:
+
+notebooks/analise_sazonalidade_modelo.ipynb
+
+##### Para rodar o modelo prático:
+
+Execute scripts/modelo_pratico.py com os dados corrigidos
+
+##### Os resultados serão salvos em:
+
+relatorio_analise_completa.csv
+
+relatorio_ia_achados.txt
 
 ## Conclusão
 - A análise revelou que o negócio apresenta forte potencial de crescimento, com um faturamento anual de R$ 32.835 e uma evolução de +194,4% ao longo de 12 meses. No entanto, esse crescimento é acompanhado por uma sazonalidade acentuada, com variações mensais superiores a 300%, o que exige planejamento operacional mais preciso.
