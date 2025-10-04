@@ -103,6 +103,15 @@
 - Reavaliar modelo de ML com 24+ meses de dados
 - Desenvolver sistema de recomendações com base em comportamento de compra
 
+
+## Tecnologias Utilizadas
+
+- **Power Query**: Pré-processamento e limpeza inicial dos dados
+- **Python (pandas, numpy)**: Manipulação de dados e análise estatística
+- **Matplotlib / Seaborn**: Visualização de dados
+- **Scikit-learn**: Modelagem preditiva com Random Forest
+- **Jupyter Notebook**: Ambiente de desenvolvimento e documentação
+
 ## Conclusão
 - A análise revelou que o negócio apresenta forte potencial de crescimento, com um faturamento anual de R$ 32.835 e uma evolução de +194,4% ao longo de 12 meses. No entanto, esse crescimento é acompanhado por uma sazonalidade acentuada, com variações mensais superiores a 300%, o que exige planejamento operacional mais preciso.
 
