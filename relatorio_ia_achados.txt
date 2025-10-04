@@ -1,0 +1,21 @@
+RELATÓRIO DE INTELIGÊNCIA ARTIFICIAL - ACHADOS E LIMITAÇÕES
+======================================================================
+
+METODOLOGIA:
+- Algoritmo: Random Forest Regressor
+- Período: 12 meses (Out/2024 a Set/2025)
+- Features: 7 variáveis analisadas
+- Split: 9 meses treino / 3 meses teste
+
+RESULTADOS:
+- MAE: R$ 1.803,76
+- MAPE: 42,2%
+- R²: -2,46
+
+VARIÁVEIS MAIS IMPORTANTES:
+1. Compradores únicos (27,6%)
+2. Quantidade de vendas (25,1%)
+3. Visitas (18,9%)
+4. Valor médio por venda (12,4%)
+
+CONCLUSÃO: Dados insuficientes para ML, mas insights valiosos obtidos.
