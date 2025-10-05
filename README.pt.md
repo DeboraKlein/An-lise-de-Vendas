@@ -128,9 +128,14 @@
 git clone [https://github.com/DeboraKlein/Analise-de-Sazonalidade-e-Modelagem-Preditiva.git]
 ````
 
-##### Instale as dependências:
+### Instalar dependências
 ````
 pip install -r requirements.txt
+````
+
+### Executar análise
+````
+python main.py
 ````
 
 ##### Execute o notebook principal:
